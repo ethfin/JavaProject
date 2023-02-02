@@ -122,32 +122,32 @@ public class ArrayOperations {
     //update an element in the array
     //This method updates a specific index in an array list
     public static void upd(int[] input, int inp) {
-            //Create Scanner object
-            Scanner sc = new Scanner(System.in);
-            while (true) {
-                //Print elements of array
-                System.out.print("Array list {");
-                for (int x = 0; x < inp; x++) {
-                    System.out.print(" " + input[x]);
-                }
-                System.out.println(" }");
-        
-                //Ask for index to update
-                System.out.print("Enter the index to update: ");
-                int updateIndex = sc.nextInt();
-                //Check if the index is valid
-                if (updateIndex >= 0 && updateIndex < inp) {
-                    //Ask for new value
-                    System.out.print("Enter the number to update: ");
-                    input[updateIndex] = sc.nextInt();
-                    System.out.println("Element at index " + updateIndex + " is updated.");
-                    break;
-                } else {
-                    //If index is not valid print error message
-                    System.out.println("Invalid index to update, please try again");
-                }
+        //Create Scanner object
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            //Print elements of array
+            System.out.print("Array list {");
+            for (int x = 0; x < inp; x++) {
+                System.out.print(" " + input[x]);
+            }
+            System.out.println(" }");
+    
+            //Ask for index to update
+            System.out.print("Enter the index to update: ");
+            int updateIndex = sc.nextInt();
+            //Check if the index is valid
+            if (updateIndex >= 0 && updateIndex < inp) {
+                //Ask for new value
+                System.out.print("Enter the number to update: ");
+                input[updateIndex] = sc.nextInt();
+                System.out.println("Element at index " + updateIndex + " is updated.");
+                break;
+            } else {
+                //If index is not valid print error message
+                System.out.println("Invalid index to update, please try again");
             }
         }
+    }
     
     
 
