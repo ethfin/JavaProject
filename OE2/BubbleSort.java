@@ -7,14 +7,14 @@ public class BubbleSort {
         int n = sc.nextInt();
         int[] ary = new int[n];
 
-        System.out.println("Enter the elements of the array: ");
+        System.out.println("Enter the elements of the array");
         for (int i = 0; i < n; i++) {
             System.out.print("Enter the index [" + i + "] number :");
             ary[i] = sc.nextInt();
         }
 
         do {
-            System.out.print("Enter [1] for Bubble Sort.");
+            System.out.println("Enter [1] for Bubble Sort.");
             System.out.println("Enter [2] for Insertion Sort.");
             System.out.println("Enter [0] to Exit the Program.");
             System.out.print("Enter your choice: ");
