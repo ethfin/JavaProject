@@ -5,12 +5,12 @@ public class BubbleSort {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of the array: ");
         int n = sc.nextInt();
-        int[] ary = new int[n];
+        int[] defaultArray = new int[n];
 
         System.out.println("Enter the elements of the array");
         for (int i = 0; i < n; i++) {
             System.out.print("Enter the index [" + i + "] number :");
-            ary[i] = sc.nextInt();
+            defaultArray[i] = sc.nextInt();
         }
 
         do {
@@ -22,11 +22,11 @@ public class BubbleSort {
 
             switch (choice) {
                 case 1:
-                    bubbleSort(ary);
+                    bubbleSort(defaultArray);
                     promptAndWait();
                     break;
                 case 2:
-                    insertionSort(ary);
+                    insertionSort(defaultArray);
                     promptAndWait();
                     break;
                 case 0:
@@ -40,16 +40,16 @@ public class BubbleSort {
         } while (true);
     }
 
-    static void bubbleSort(int[] arr) {
-        int n = arr.length;
+    public static void bubbleSort(int[] tempArr) {
+        int n = tempArr.length;
         int iteration = 0;
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                if (tempArr[j] > tempArr[j + 1]) {
+                    int temp = tempArr[j];
+                    tempArr[j] = tempArr[j + 1];
+                    tempArr[j + 1] = temp;
                 }
                 iteration++;
             }
@@ -57,30 +57,30 @@ public class BubbleSort {
 
         System.out.println("Sorted array: ");
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(tempArr[i] + " ");
         }
         System.out.println("\nNumber of iterations: " + iteration);
     }
 
-    static void insertionSort(int[] arr) {
-        int n = arr.length;
+    public static void insertionSort(int[] tempArr) {
+        int n = tempArr.length;
         int iteration = 0;
 
         for (int i = 1; i < n; i++) {
-            int key = arr[i];
+            int key = tempArr[i];
             int j = i - 1;
 
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
+            while (j >= 0 && tempArr[j] > key) {
+                tempArr[j + 1] = tempArr[j];
                 j = j - 1;
                 iteration++;
             }
-            arr[j + 1] = key;
+            tempArr[j + 1] = key;
         }
 
         System.out.println("Sorted array: ");
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+            System.out.print(tempArr[i] + " ");
         }
         System.out.println("\nNumber of iterations: " + iteration);
     }
@@ -90,9 +90,4 @@ public class BubbleSort {
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
     }
-
-    public static void print(String str){
-        System.out.println(str);
-    }
-
 }
