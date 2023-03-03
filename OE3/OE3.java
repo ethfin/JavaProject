@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class OE3 {
     private static final Scanner scan = new Scanner(System.in);
-    private Node list;
+    private static Node list;
 
     private static class Node {
         int data;
@@ -39,7 +39,7 @@ public class OE3 {
         prevNode.next = inAfter;
     }
 
-    public void printList() {
+    public static void printList() {
         Node current = list;
         while (current != null) {
             System.out.print(current.data + " ");
@@ -90,7 +90,7 @@ public class OE3 {
                     for (int i = 0; i < inBegNum.length; i++) {
                         try {
                             int n = Integer.parseInt(inBegNum[i]);
-                            list.inEnd(n);
+                            list.inBeg(n);
                         } catch (NumberFormatException e) {
                             System.out.println("Invalid input: " + inBegNum[i] + " is not an integer.");
                         }
@@ -119,13 +119,14 @@ public class OE3 {
                 case 3:
                     System.out.print("Enter 1 value to insert: ");
                     int inAfterNum = scan.nextInt();
+                    printList();
                     System.out.print("Enter the value after which to insert: ");
                     int inPreNum = scan.nextInt();
                     Node inAfterPrev = list.search(inPreNum);
                     list.inAfter(inAfterPrev, inAfterNum);
                     break;
                 case 4:
-                    list.printList();
+                    OE3.printList();
                     promptAndWait();
                     break;
                 case 0:
