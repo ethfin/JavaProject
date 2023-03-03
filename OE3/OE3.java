@@ -4,21 +4,18 @@ public class OE3 {
     private static final Scanner scan = new Scanner(System.in);
     private Node list;
 
-    // Node class
     private static class Node {
         int data;
         Node next;
         Node(int data) { this.data = data; }
     }
 
-    // Insertion at the beginning
     public void inBeg(int data) {
         Node insertBeg = new Node(data);
         insertBeg.next = list;
         list = insertBeg;
     }
 
-    // Insertion at the end
     public void inEnd(int data) {
         Node inEnd = new Node(data);
         if (list == null) {
@@ -32,7 +29,6 @@ public class OE3 {
         current.next = inEnd;
     }
 
-    // Insertion after specified node
     public void inAfter(Node prevNode, int data) {
         if (prevNode == null) {
             System.out.println("Previous node cannot be null.");
@@ -43,7 +39,6 @@ public class OE3 {
         prevNode.next = inAfter;
     }
 
-    // Print the linked list
     public void printList() {
         Node current = list;
         while (current != null) {
@@ -82,7 +77,7 @@ public class OE3 {
         
             switch (ch) {
                 case 1:
-                    System.out.print("Enter numbers to insert (separated by space): ");
+                    System.out.print("Enter multiple values to insert (separated by space): ");
                     scan.nextLine();
                     String inBeg = scan.nextLine();
                     
@@ -122,7 +117,7 @@ public class OE3 {
                     }
                     break;
                 case 3:
-                    System.out.print("Enter multiple values to insert: ");
+                    System.out.print("Enter 1 value to insert: ");
                     int inAfterNum = scan.nextInt();
                     System.out.print("Enter the value after which to insert: ");
                     int inPreNum = scan.nextInt();
